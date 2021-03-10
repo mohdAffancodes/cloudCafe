@@ -1,0 +1,81 @@
+<html>
+   <head>
+      <meta
+         name="viewport"
+         content="user-scalable=no ,width=device-width ,initial-scale=1.0"
+      />
+      <title>Cloud Cafe</title>
+      <!--Firebase library-->
+      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+      <!--fonts-->
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+         rel="stylesheet"
+      />
+      <!--Materialize Icon-->
+      <link
+         href="https://fonts.googleapis.com/icon?family=Material+Icons"
+         rel="stylesheet"
+      />
+      <!--materialize css-->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      />
+      <!--CSS-->
+      <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+      <h1>Cloud Cafe</h1>
+
+      <section class="infomodal">
+         <div id="modal3" class="modal">
+            <div class="modal-content">
+               <h4 id="info-modal-heading">Alert</h4>
+               <p class="info-modal-heading">Please fill all the fields</p>
+            </div>
+            <div class="modal-footer">
+               <a href="#" class="modal-close waves-effects btn-flat">
+                  <i class="material-icons" style="font-size: 30px">close</i>
+               </a>
+            </div>
+         </div>
+      </section>
+
+      <div class="content container">
+         <form id="add-cafe-form">
+            <input type="text" name="name" placeholder="Cafe name*" />
+            <input type="text" name="city" placeholder="Cafe city*" />
+            <button>Add Cafe</button>
+         </form>
+         <ul id="cafe-list"></ul>
+      </div>
+
+      <script>
+         // Your web app's Firebase configuration
+         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+         var firebaseConfig = {
+            apiKey: "AIzaSyCiilsubr3qjS9hewQnnL7kshbqDH8pjjo",
+            authDomain: "mohdaffancodes-firestore.firebaseapp.com",
+            databaseURL:
+               "https://mohdaffancodes-firestore-default-rtdb.firebaseio.com",
+            projectId: "mohdaffancodes-firestore",
+            storageBucket: "mohdaffancodes-firestore.appspot.com",
+            messagingSenderId: "713873353387",
+            appId: "1:713873353387:web:76df97d5517d59c4b3a5ee",
+            measurementId: "G-58SK722P09",
+         };
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+
+         const db = firebase.firestore();
+         db.settings({ timeStampsInSnapshots: true });
+      </script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!--Main Script-->
+      <script src="app.js"></script>
+   </body>
+</html>

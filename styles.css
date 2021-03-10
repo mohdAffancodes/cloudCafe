@@ -1,0 +1,170 @@
+body {
+   background: #eab0dc;
+   font-family: "Ubuntu", sans-serif;
+}
+
+h1 {
+   color: #fff !important;
+   font-size: 64px !important;
+   letter-spacing: 2px !important;
+   margin-top: 20px !important;
+   text-align: center !important;
+}
+/*content*/
+.content {
+   background: #fff !important;
+   margin: 30px auto !important;
+   padding: 20px 30px !important;
+   border-radius: 10px 120px 10px 10px !important;
+   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1) !important;
+}
+.container {
+   max-width: 960px !important;
+   width: 95% !important;
+}
+
+ul {
+   list-style-type: none !important;
+   padding: 0 !important;
+}
+/*lists*/
+li {
+   padding: 20px !important;
+   background: #f6f6f6 !important;
+   font-size: 20px !important;
+   color: #555 !important;
+   position: relative !important;
+   border-bottom: 1px solid #e6e6e6 !important;
+   height: 100px !important;
+   border-radius: 10px 10px 10px 10px !important;
+}
+
+li:nth-child(even) {
+   margin-top: 1px !important;
+   padding: 20px !important;
+   background: #f2f2f2 !important;
+}
+
+li:nth-child(1) {
+   padding: 20px !important;
+   background: #f2f2f2 !important;
+   border-radius: 10px !important;
+}
+
+li span {
+   display: block !important;
+}
+
+li span:nth-child(2) {
+   font-size: 16px !important;
+   margin-top: 6px !important;
+   color: #999 !important;
+}
+
+li div {
+   position: absolute !important;
+   top: 10px !important;
+   right: 5px !important;
+   background: transparent !important;
+   width: 40px !important;
+   text-align: center !important;
+   padding: 10px 0 !important;
+   font-weight: bold !important;
+   cursor: pointer !important;
+}
+/*form*/
+form input {
+   float: left !important;
+   width: 38% !important;
+   margin: 0 !important;
+   border: 0 !important;
+   border-bottom: 2px solid rgba(0, 0, 0, 0.521) !important;
+   margin: 0 1% !important;
+   padding: 10px !important;
+   display: block !important;
+   box-shadow: none !important;
+   box-sizing: border-box !important;
+   font-size: 18px !important;
+   font-family: "Ubuntu", sans-serif !important;
+}
+::placeholder {
+   /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #999;
+   opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+   /* Internet Explorer 10-11 */
+   color: #999;
+}
+
+::-ms-input-placeholder {
+   /* Microsoft Edge */
+   color: #999;
+}
+
+form input:focus {
+   outline: none !important;
+   border-bottom: 3px solid #88236f !important;
+   padding-bottom: 8px !important;
+   transition: all ease 0.2s !important;
+}
+
+form:after {
+   content: "" !important;
+   clear: both !important;
+   display: block !important;
+}
+/*button*/
+button {
+   cursor: pointer !important;
+   border: 0 !important;
+   background: #fff !important;
+   border: 2px solid rgba(0, 0, 0, 0.521) !important;
+   border-radius: 10px 120px 10px 10px !important;
+   padding: 13px !important;
+   width: 18% !important;
+   font-weight: bold;
+   font-family: "Ubuntu", sans-serif !important;
+   letter-spacing: 1px !important;
+   color: #999 !important;
+}
+
+button:hover {
+   border: 2px solid #88236f !important;
+}
+button:focus {
+   border: 2px solid #88236f !important;
+}
+/*modal*/
+.modal {
+   border-radius: 10px 120px 10px 10px !important;
+}
+.modal p {
+   color: #999 !important;
+}
+.modal-footer {
+   background: #f2f2f2 !important;
+}
+/*icons on hover*/
+.material-icons:hover {
+   color: black !important;
+   font-size: 30px;
+}
+/*edit icon*/
+.edit {
+   padding-top: 10px;
+}
+/*media queries*/
+@media only screen and (max-width: 900px) {
+   form input {
+      width: 48% !important;
+   }
+   button {
+      width: 150px !important;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      margin-top: 15px !important;
+      border-radius: 10px !important;
+   }
+}
