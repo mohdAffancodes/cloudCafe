@@ -7,7 +7,7 @@ function renderCafe(doc) {
    let name = document.createElement("span");
    let city = document.createElement("span");
 
-   let deleteContainer = document.createElement("div");
+   let iconsContainer = document.createElement("div");
    let deleteIcon = document.createElement("i");
    let editIcon = document.createElement("i");
 
@@ -24,9 +24,9 @@ function renderCafe(doc) {
 
    li.appendChild(name);
    li.appendChild(city);
-   deleteContainer.appendChild(deleteIcon);
-   deleteContainer.appendChild(editIcon);
-   li.appendChild(deleteContainer);
+   iconsContainer.appendChild(deleteIcon);
+   iconsContainer.appendChild(editIcon);
+   li.appendChild(iconsContainer);
 
    cafeList.appendChild(li);
 
