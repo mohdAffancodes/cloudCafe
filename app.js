@@ -53,7 +53,6 @@ function renderCafe(doc) {
          name.style.borderBottom = "2px solid #88236f";
          city.style.borderBottom = "1px solid #88236f";
       } else if (edited == true) {
-         
          name.contentEditable = false;
          city.contentEditable = false;
          editIcon.textContent = "edit";
@@ -72,6 +71,13 @@ function renderCafe(doc) {
    });
 }
 
+//modifying the data
+function modify(data, list) {
+   let spans = list.getElementsByTagName("span");
+   spans[0].textContent = data.name;
+   spans[1].textContent = data.city;
+}
+
 //Calling the data
 db.collection("cafes").onSnapshot((snapshot) => {
    let changes = snapshot.docChanges();
@@ -79,8 +85,12 @@ db.collection("cafes").onSnapshot((snapshot) => {
       if (change.type == "added") {
          renderCafe(change.doc);
       } else if (change.type == "removed") {
-         let li = cafeList.querySelector("[data-id=" + change.doc.id + "]");
+         let li = cafeList.querySelector(`li[data-id="${change.doc.id}"]`);
          li.remove();
+      } else if (change.type == "modified") {
+         //.console.log("modified");
+         let li = cafeList.querySelector(`li[data-id="${change.doc.id}"]`);
+         modify(change.doc.data(), li);
       }
    });
 });
