@@ -79,21 +79,23 @@ function modify(data, list) {
 }
 
 //Calling the data
-db.collection("cafes").onSnapshot((snapshot) => {
-   let changes = snapshot.docChanges();
-   changes.forEach((change) => {
-      if (change.type == "added") {
-         renderCafe(change.doc);
-      } else if (change.type == "removed") {
-         let li = cafeList.querySelector(`li[data-id="${change.doc.id}"]`);
-         li.remove();
-      } else if (change.type == "modified") {
-         //.console.log("modified");
-         let li = cafeList.querySelector(`li[data-id="${change.doc.id}"]`);
-         modify(change.doc.data(), li);
-      }
+db.collection("cafes")
+   .orderBy("createdAt", "desc")
+   .onSnapshot((snapshot) => {
+      let changes = snapshot.docChanges();
+      changes.forEach((change) => {
+         if (change.type == "added") {
+            renderCafe(change.doc);
+         } else if (change.type == "removed") {
+            let li = cafeList.querySelector(`li[data-id="${change.doc.id}"]`);
+            li.remove();
+         } else if (change.type == "modified") {
+            //.console.log("modified");
+            let li = cafeList.querySelector(`li[data-id="${change.doc.id}"]`);
+            modify(change.doc.data(), li);
+         }
+      });
    });
-});
 
 //saving data
 form.addEventListener("submit", (e) => {
@@ -108,6 +110,7 @@ form.addEventListener("submit", (e) => {
       instance.open();
    } else {
       db.collection("cafes").add({
+         createdAt: Date.now(),
          name: form.name.value,
          city: form.city.value,
       });
